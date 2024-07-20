@@ -97,7 +97,7 @@ def generate_launch_description():
             DeclareLaunchArgument(
                 'busy_count',
                 default_value='2',
-                description='amount of times the server will reply with BUSY before accepting'
+                description='amount of times the service will reply with BUSY before accepting'
             ),
             # Define the dummy node
             Node(
