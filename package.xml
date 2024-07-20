@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>yaskawa_executor_tests</name>
+  <version>0.0.1</version>
+  <description>package allowing to test the yaskawa_executor, includes a node that reads joint trajectory from a csv, and a node that simulates a QueueTrajPoint server for offline testing</description>
+  <maintainer email="zane.zake@irt-jules-verne.fr">Zane Zake</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <depend>rclcpp</depend>
+  <depend>motoros2_interfaces</depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <depend>sensor_msgs</depend>
+
+  <!-- for client and testing -->
+  <depend>rclcpp_action</depend>
+  <depend>yaskawa_executor</depend>
+
+  <depend>action_msgs</depend>
+
+  
+  
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
