@@ -41,3 +41,4 @@ The action server can be configured using the following parameters:
 
 ## TODO
 - The client needs updating to fill also the velocities, for the moment only uses positions!
+- I want to add an automated version of the client to test all error cases
