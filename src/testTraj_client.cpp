@@ -3,6 +3,7 @@
 #include <yaskawa_executor/action/traj_executor.hpp>
 #include <fstream>
 #include <iostream>
+#include <filesystem>
 #include <ament_index_cpp/get_package_share_directory.hpp>
 
 using TrajExecutor = yaskawa_executor::action::TrajExecutor; // our action (we're the client here)
@@ -127,7 +128,11 @@ private:
   bool readCSV(const std::string &file_path)
   {
     // Read the CSV file and fill the trajectory points
-    std::ifstream csv_file(file_path);
+    std::string temp_string=file_path;
+    if(std::filesystem::is_symlink(file_path)){
+      temp_string = std::filesystem::read_symlink(file_path);
+    }
+    std::ifstream csv_file(temp_string);
     if (!csv_file.is_open())
     {
       RCLCPP_ERROR(this->get_logger(), "the csv file is empty.");
